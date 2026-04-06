@@ -1,8 +1,6 @@
 # src/words.py
-
 import random
 
-# List of words for the game
 WORD_LIST = [
     "watermelon",
     "apple",
