@@ -1,4 +1,3 @@
-# src/words.py
 import random
 
 # Word list — can also be loaded from data/words.txt
