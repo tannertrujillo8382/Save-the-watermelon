@@ -1,6 +1,5 @@
-# src/game.py
 from .logic import render_masked_word, is_win, validate_guess
-from .words import WORD_LIST, choose_word  # fixed imports
+from .words import WORD_LIST, choose_word
 
 MAX_SLICES = 6  # Number of lives
 
