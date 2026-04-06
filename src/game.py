@@ -1,6 +1,6 @@
+# src/game.py
 from .logic import render_masked_word, is_win, validate_guess
-from .words import WORD_LIST, choose_word
-from words import select_secret_word
+from .words import WORD_LIST, choose_word  # fixed imports
 
 MAX_SLICES = 6  # Number of lives
 
@@ -17,14 +17,14 @@ def prompt_play_again():
     return response == "y"
 
 def main_game_loop():
-    secret_word = select_secret_word()
+    secret_word = choose_word()  # use choose_word(), not select_secret_word
     guessed_letters = set()
     remaining_slices = MAX_SLICES
 
     print("\nWelcome to Save the Watermelon!\n")
 
     while remaining_slices > 0 and not is_win(secret_word, guessed_letters):
-        print("\nWord: ", render_masked_word(secret_word, guessed_letters))
+        print("\nWord:", render_masked_word(secret_word, guessed_letters))
         print("Slices remaining:", remaining_slices)
 
         guess = prompt_for_letter(guessed_letters)
@@ -44,6 +44,10 @@ def main_game_loop():
     if prompt_play_again():
         main_game_loop()
     else:
+        print("Thanks for playing!")
+
+if __name__ == "__main__":
+    main_game_loop()
         print("Thanks for playing!")
 
 if __name__ == "__main__":
