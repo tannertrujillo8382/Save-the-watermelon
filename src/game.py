@@ -1,4 +1,5 @@
-from logic import render_masked_word, is_win, validate_guess
+from .logic import render_masked_word, is_win, validate_guess
+from .words import WORD_LIST, choose_words
 from words import select_secret_word
 
 MAX_SLICES = 6  # Number of lives
