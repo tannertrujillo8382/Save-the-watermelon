@@ -1,4 +1,3 @@
-# src/game.py
 from logic import render_masked_word, is_win, validate_guess
 from words import select_secret_word
 
